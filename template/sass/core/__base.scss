@@ -43,6 +43,10 @@ body {
         --theme-text-color: #{$light-cl};
 
     }
+
+    &.show{
+        @include custom-scrollbar(10px, $main-cl );
+    }
 }
 
 body,
@@ -55,7 +59,7 @@ html {
     font-display: swap;
     line-height: $lh-body;
     // color: $cl-body;
-    @include custom-scrollbar(10px);
+    @include custom-scrollbar(10px , transparent);
 }
 
 a {

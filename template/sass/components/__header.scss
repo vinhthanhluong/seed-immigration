@@ -83,7 +83,7 @@
 
 }
 
-.header-menu-socail {
+.header-menu-social {
     display: none;
     align-items: center;
     justify-content: center;
@@ -93,7 +93,7 @@
         display: flex;
     }
 
-    .menu-socail {
+    .menu-social {
         width: 30px;
         height: 30px;
         // border: 1px solid $main-cl;
@@ -105,15 +105,15 @@
         margin: 0 10px;
         cursor: pointer;
 
-        &.socail-face {
+        &.social-face {
             background-color: #3B5998;
         }
 
-        &.socail-youtube {
+        &.social-youtube {
             background-color: #EA412C;
         }
 
-        &.socail-insta {
+        &.social-insta {
             background-color: $b-cl;
         }
     }

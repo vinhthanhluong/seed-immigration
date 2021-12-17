@@ -6,4 +6,26 @@ export default function LoadingModule() {
 			pageLoading.css('display', 'none');	
 		});
 	}
+
+
+	// scrolling hide / show
+	function debounce(f , timeout = 600) {
+        let timer;
+        return (...args) => {
+        clearTimeout(timer);
+        timer =  setTimeout(() => {
+            f.apply(this, args);
+        }, timeout);
+           
+        }
+    }
+
+    window.addEventListener("mousewheel" , (e) => {
+        document.querySelector("body").classList.add('show');
+    });
+
+    window.addEventListener("mousewheel", debounce(e => {
+        document.querySelector('body').classList.remove('show');
+
+    }));
 }

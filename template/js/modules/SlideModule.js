@@ -1,4 +1,4 @@
-export default function SlideModule(){
+export default function SlideModule() {
     function slide() {
         let width = $(window).width();
         //console.log(width);
@@ -61,6 +61,31 @@ export default function SlideModule(){
         const pagination = el.querySelector('.swiper-pagination');
         const prevBtn = el.querySelector('.swiper-button-prev');
         const nextBtn = el.querySelector('.swiper-button-next');
+
+        //not slide
+        const touchMove = el.querySelector('.notslide');
+        if (touchMove) {
+            var notSlide = false;
+        } else {
+            var notSlide = true;
+        }
+
+        //pagi dynamic
+        const pagiDynamic = el.querySelector('.dynamic');
+        if (pagiDynamic) {
+            var dynamic = true;
+        } else {
+            var dynamic = false;
+        }
+
+        //loop
+        const slideLoop = el.querySelector('.not-loop');
+        if (slideLoop) {
+            var loops = false;
+        } else {
+            var loops = true;
+        }
+
         try {
             new Swiper(slider, {
                 speed: 1200,
@@ -69,6 +94,9 @@ export default function SlideModule(){
                 observer: true,
                 observeParents: true,
                 observeSlideChildren: true,
+                loop: loops,
+                allowTouchMove: notSlide,
+
                 autoplay: {
                     delay: 4000,
                 },
@@ -76,13 +104,13 @@ export default function SlideModule(){
                 pagination: {
                     el: pagination,
                     clickable: true,
+                    dynamicBullets: dynamic,
                 },
 
                 navigation: {
                     nextEl: nextBtn,
                     prevEl: prevBtn,
                 },
-                loop: true,
             });
         } catch (err) {
             console.log(err);
@@ -99,37 +127,37 @@ export default function SlideModule(){
         try {
             const swiper = new Swiper(sliderContainer, {
                 speed: 1000,
-                    loop: true,
-                    spaceBetween: 20,
-                    slidesPerView: 2,
-                    // autoplay: {
-                    //     delay: 4000,
+                loop: true,
+                spaceBetween: 20,
+                slidesPerView: 2,
+                // autoplay: {
+                //     delay: 4000,
+                // },
+                pagination: {
+                    el: SliderPagination,
+                    clickable: true,
+                },
+
+                navigation: {
+                    nextEl: sliderNextBtn,
+                    prevEl: sliderPrevBtn,
+                },
+
+                breakpoints: {
+                    // 320: {
+                    //     spaceBetween: 50
                     // },
-                    pagination: {
-                        el: SliderPagination,
-                        clickable: true,
-                    },
+                    // 480: {
+                    //     spaceBetween: 30
+                    // },
+                    // 576: {
+                    //     spaceBetween: 0,
 
-                    navigation: {
-                        nextEl: sliderNextBtn,
-                        prevEl: sliderPrevBtn,
-                    },
-
-                    breakpoints: {
-                        // 320: {
-                        //     spaceBetween: 50
-                        // },
-                        // 480: {
-                        //     spaceBetween: 30
-                        // },
-                        // 576: {
-                        //     spaceBetween: 0,
-
-                        // }
-                    }
-                    // observeParents:true,
-                    // observeSlideChildren: true,
-                    // observer: true,
+                    // }
+                }
+                // observeParents:true,
+                // observeSlideChildren: true,
+                // observer: true,
             })
         }
         catch (err) {
