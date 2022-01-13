@@ -50,9 +50,69 @@ export default function SlideProductModule() {
                 console.log(err)
             }
         }
-
     }
 
     $('#slide-thumbs').length && slideThumbs();
+
+    //slide thumb foreach
+    if ($('.aqweqwed')) {
+        document.querySelectorAll('.swiper-thumbs').forEach(el => {
+            const swiper = el.querySelector('.slide-thumbs');
+            const slider = el.querySelector('.swiper-container');
+            const pagination = el.querySelector('.swiper-pagination');
+            const prevBtn = el.querySelector('.swiper-button-prev');
+            const nextBtn = el.querySelector('.swiper-button-next');
+
+            const thumbBg = el.querySelector('.thumbs-big');
+            const thumbSm = el.querySelector('.thumbs-small');
+
+
+            //loop
+            const slideLoop = el.querySelector('.not-loop');
+            if (slideLoop) {
+                var loops = false;
+            } else {
+                var loops = true;
+            }
+
+            try {
+                const thumbSmall = new Swiper(thumbSm, {
+                    speed: 1200,
+                    slidesPerView: 'auto',
+                    // spaceBetween: 10,
+                    autoHeight: false,
+                    // loop: loops,
+                    freeMode: true,
+                    watchSlidesVisibility: true,
+                    watchSlidesProgress: true,
+                });
+
+                const thumbBig = new Swiper(thumbBg, {
+                    speed: 1200,
+                    slidesPerView: 'auto',
+                    // spaceBetween: 10,
+                    // loop: loops,
+                    thumbs: {
+                        swiper: thumbSmall,
+                    },
+
+                    pagination: {
+                        el: pagination,
+                        clickable: true,
+                    },
+
+                    navigation: {
+                        nextEl: nextBtn,
+                        prevEl: prevBtn,
+                    },
+                });
+
+
+            } catch (err) {
+                console.log(err);
+            }
+        });
+    }
+
 
 }

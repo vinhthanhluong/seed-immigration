@@ -1,69 +1,80 @@
 export default function SlideModule() {
-    function slide() {
-        let width = $(window).width();
-        //console.log(width);
-        if (width <= 1200 && document.querySelector('#slide-home')) {
-            const swiper = document.querySelector('#slide-home');
-            const sliderContainer = swiper.querySelector('.swiper');
-            const SliderPagination = swiper.querySelector('.swiper-pagination-orange');
-            const sliderPrevBtn = swiper.querySelector('.swiper-prev');
-            const sliderNextBtn = swiper.querySelector('.swiper-next');
-            try {
-                const swiper = new Swiper(sliderContainer, {
-                    speed: 1000,
-                    loop: true,
-                    // autoHeight: true,
-                    //spaceBetween: 20,
-                    slidesPerView: 1,
-                    autoplay: {
-                        delay: 4000,
-                    },
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                    },
+    if (document.querySelector('.swiper-banner')) {
+        const swiper = document.querySelector('.swiper-banner');
+        const sliderContainer = swiper.querySelector('.swiper');
+        const SliderPagination = swiper.querySelector('.swiper-pagination');
+        const sliderPrevBtn = swiper.querySelector('.swiper-button-prev');
+        const sliderNextBtn = swiper.querySelector('.swiper-button-next');
+        try {
+            const swiper = new Swiper(sliderContainer, {
+                speed: 1000,
+                loop: true,
+                spaceBetween: 0,
+                slidesPerView: 1,
+                // autoplay: {
+                //     delay: 4000,
+                // },
+                pagination: {
+                    el: SliderPagination,
+                    clickable: true,
+                },
 
-                    // navigation: {
-                    //     nextEl: '.swiper-button-next',
-                    //     prevEl: '.swiper-button-prev',
+                navigation: {
+                    nextEl: sliderNextBtn,
+                    prevEl: sliderPrevBtn,
+                },
+
+                breakpoints: {
+                    // 320: {
+                    //     spaceBetween: 50
                     // },
+                    // 480: {
+                    //     spaceBetween: 30
+                    // },
+                    // 576: {
+                    //     spaceBetween: 0,
 
-                    breakpoints: {
-                        // 320: {
-                        //     spaceBetween: 50
-                        // },
-                        // 480: {
-                        //     spaceBetween: 30
-                        // },
-                        // 576: {
-                        //     spaceBetween: 0,
+                    // }
+                }
+                // observeParents:true,
+                // observeSlideChildren: true,
+                // observer: true,
+            });
+            
+            // swiper.slideTo(1);
+            swiper.on('slideChangeTransitionStart', function () {
+                const swiper_S = swiper.el.querySelector('.swiper-slide-active video');
+                
+                if (swiper_S) {
+                    swiper.el.querySelectorAll('.swiper-slide video').forEach((x) => {
+                        x.pause();
+                    })
+                }
+            });
 
-                        // }
-                    }
-                    // observeParents:true,
-                    // observeSlideChildren: true,
-                    // observer: true,
-                })
+            function muteVideoWhenOverScroll() {
+                const pinStopVideo = document.querySelector('.swiper-banner').offsetHeight;
+                if (window.scrollY >= pinStopVideo) {
+                    document.querySelectorAll('.swiper-banner video').forEach((v) => {
+                        v.pause();
+                    })
+                }
             }
-            catch (err) {
-                console.log(err)
-            }
-
+            window.addEventListener('scroll', muteVideoWhenOverScroll);
+        }
+        catch (err) {
+            console.log(err)
         }
     }
 
-    $(window).on("resize", function () {
-        slide;
-    });
-
     document.querySelectorAll('.swiper-custom').forEach(el => {
-        const slider = el.querySelector('.swiper');
-        const pagination = el.querySelector('.swiper-pagination');
-        const prevBtn = el.querySelector('.swiper-button-prev');
-        const nextBtn = el.querySelector('.swiper-button-next');
+        let slider = el.querySelector('.swiper');
+        let pagination = el.querySelector('.swiper-pagination');
+        let prevBtn = el.querySelector('.swiper-button-prev');
+        let nextBtn = el.querySelector('.swiper-button-next');
 
         //not slide
-        const touchMove = el.querySelector('.notslide');
+        let touchMove = el.querySelector('.notslide');
         if (touchMove) {
             var notSlide = false;
         } else {
@@ -71,7 +82,7 @@ export default function SlideModule() {
         }
 
         //pagi dynamic
-        const pagiDynamic = el.querySelector('.dynamic');
+        let pagiDynamic = el.querySelector('.dynamic');
         if (pagiDynamic) {
             var dynamic = true;
         } else {
@@ -79,7 +90,7 @@ export default function SlideModule() {
         }
 
         //loop
-        const slideLoop = el.querySelector('.not-loop');
+        let slideLoop = el.querySelector('.not-loop');
         if (slideLoop) {
             var loops = false;
         } else {
