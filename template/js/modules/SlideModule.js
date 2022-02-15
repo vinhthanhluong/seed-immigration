@@ -1,6 +1,6 @@
 export default function SlideModule() {
-    if (document.querySelector('.swiper-banner')) {
-        const swiper = document.querySelector('.swiper-banner');
+    if (document.querySelector('.swiper-banners')) {
+        const swiper = document.querySelector('.swiper-banners');
         const sliderContainer = swiper.querySelector('.swiper');
         const SliderPagination = swiper.querySelector('.swiper-pagination');
         const sliderPrevBtn = swiper.querySelector('.swiper-button-prev');
@@ -42,25 +42,25 @@ export default function SlideModule() {
             });
             
             // swiper.slideTo(1);
-            swiper.on('slideChangeTransitionStart', function () {
-                const swiper_S = swiper.el.querySelector('.swiper-slide-active video');
+            // swiper.on('slideChangeTransitionStart', function () {
+            //     const swiper_S = swiper.el.querySelector('.swiper-slide-active video');
                 
-                if (swiper_S) {
-                    swiper.el.querySelectorAll('.swiper-slide video').forEach((x) => {
-                        x.pause();
-                    })
-                }
-            });
+            //     if (swiper_S) {
+            //         swiper.el.querySelectorAll('.swiper-slide video').forEach((x) => {
+            //             x.pause();
+            //         })
+            //     }
+            // });
 
-            function muteVideoWhenOverScroll() {
-                const pinStopVideo = document.querySelector('.swiper-banner').offsetHeight;
-                if (window.scrollY >= pinStopVideo) {
-                    document.querySelectorAll('.swiper-banner video').forEach((v) => {
-                        v.pause();
-                    })
-                }
-            }
-            window.addEventListener('scroll', muteVideoWhenOverScroll);
+            // function muteVideoWhenOverScroll() {
+            //     const pinStopVideo = document.querySelector('.swiper-banner').offsetHeight;
+            //     if (window.scrollY >= pinStopVideo) {
+            //         document.querySelectorAll('.swiper-banner video').forEach((v) => {
+            //             v.pause();
+            //         })
+            //     }
+            // }
+            // window.addEventListener('scroll', muteVideoWhenOverScroll);
         }
         catch (err) {
             console.log(err)

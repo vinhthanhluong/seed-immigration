@@ -14,4 +14,36 @@
         width: 8px;
         height: 8px;
     }
+
+    .swiper-button-next , .swiper-button-prev{
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background-color: rgba($color: $g-E5E5-cl, $alpha: .4);
+        color: $b-cl;
+        transition: all .3s ease;
+        &::after{
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        &:hover{
+            color: $r-cl;
+        }
+    }
+
+    .swiper-button-prev{
+        &::after{
+            margin-right: 2px;
+        }
+        
+    }
+
+    .swiper-button-next{
+        &::after{
+            margin-left: 2px;
+        }
+    }
+
+  
 }

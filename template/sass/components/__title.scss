@@ -26,6 +26,9 @@
 .tt-50 {
 	@include fz-50;
 }
+.tt-48 {
+	@include fz-48;
+}
 .tt-45 {
 	@include fz-45;
 }
@@ -34,6 +37,9 @@
 }
 .tt-36 {
 	@include fz-36;
+}
+.tt-32 {
+	@include fz-32;
 }
 .tt-30 {
 	@include fz-30;

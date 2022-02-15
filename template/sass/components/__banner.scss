@@ -1,24 +1,66 @@
 .banners {
-	.swiper-wrapper {
-		margin: 0;
-	}
-	.swiper-slide {
-		padding: 0;
-		height: 100%;
-	}
-	.swiper-slide > img {
-		width: 100%;
-		height: auto;
-		object-fit: cover;
-	}
-	.swiper-button-prev {
-		left: 20px;
-	}
-	.swiper-button-next {
-		right: 20px;
-	}
-	.swiper-pagination {
-		position: absolute;
-		bottom: 0;
-	}
+    .swiper-wrapper {
+        margin: 0;
+    }
+
+    .swiper-slide {
+        padding: 0;
+        height: 100%;
+    }
+
+    .swiper-slide>img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .swiper-button-prev {
+        left: 30px;
+    }
+
+    .swiper-button-next {
+        right: 30px;
+    }
+
+    .swiper-pagination {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .banners-inner {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 205px 0;
+        position: relative;
+        color: $w-cl;
+        z-index: 0;
+
+        &::after {
+            content: '';
+            @include pos-full;
+            background-color: rgba($color: $b-cl, $alpha: .5);
+            z-index: -1;
+        }
+    }
+
+    .banners-wrap {
+        text-align: center;
+		max-width: 770px;
+		margin: 0 auto;
+
+		.label{
+			margin-bottom: 15px;
+			line-height: 1.5;
+		}
+		.title{
+			margin-bottom: 15px;
+		}
+
+		.desc{
+			line-height: 1.5;
+			margin-bottom: 15px;
+		}
+    }
+
 }
