@@ -21,25 +21,28 @@ export default function TabModule() {
     }
 
     //class
-    if ($('.c-tab')) {
-        $(".c-tab__nav ul li").click(function () {
+    if ($('.ft-tabs')) {
+        $(".tb-title").click(function () {
             var tab_id = $(this).attr("data-tab");
 
-            $(".c-tab__nav ul li").removeClass("active");
-            $(".c-tab__content").removeClass("active");
+            $(".tb-title").removeClass("active");
+            $(".tb-content").removeClass("active");
 
             $(this).addClass("active");
             $("." + tab_id).addClass("active");
         });
-        // $(".c-tab__tutorial ul li").click(function () {
-        //     var tab_id = $(this).attr("data-tab");
+    }
 
-        //     $(".c-tab__tutorial ul li").removeClass("active");
-        //     $(".c-tab__item").removeClass("active");
+    if ($('.s-tabs')) {
+        $(".s-title").click(function () {
+            var tab_id = $(this).attr("data-tab");
 
-        //     $(this).addClass("active");
-        //     $("." + tab_id).addClass("active");
-        // });
+            $(".s-title").removeClass("active");
+            $(".s-content").removeClass("active");
+
+            $(this).addClass("active");
+            $("." + tab_id).addClass("active");
+        });
     }
 
 

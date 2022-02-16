@@ -62,5 +62,41 @@
 			margin-bottom: 15px;
 		}
     }
+    
+    &-page{
+        background-size: cover;
+        background-repeat: no-repeat;
+        // padding: 268px 0;
+        box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
+        position: relative;
+        z-index: 0;
+        height: 600px;
+        display: flex;
+        align-items: center;
+        &::after{
+            content: '';
+            @include pos-full;
+            background: radial-gradient(45.17% 45.17% at 50% 50%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.235) 100%);
+            z-index: -1;
+        }
+        
+        .title{
+            color: $w-cl;
+            line-height: 1.4;
+        }
 
+        .breadcrumb{
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            @include min-media($bk-1200){
+                left: calc((100vw - 1200px) / 2);
+            }
+        }
+
+        .btn-n{
+            text-align: center;
+            margin-top: 30px;
+        }
+    }
 }

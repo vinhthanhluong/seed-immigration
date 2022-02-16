@@ -1,14 +1,11 @@
 .breadcrumb {
-    width: 100%;
-
-    &.bg-g-f2 {
-        //background-color: $g-F2F0-cl;
-    }
+    background-color: $w-cl;
+    width: auto;
+    padding: 15px 30px;
+    border-radius: 5px ;
 
     .breadcrumb-menu {
         display: flex;
-        border-bottom: 1px solid $main-cl;
-        padding: 10px 0;
 
         @include max-media($bk-576) {
             overflow-x: scroll;
@@ -20,10 +17,7 @@
         .breadcrumb-list {
             &:not(:first-child) {
                 &::before {
-                    content: '\f111 ';
-                    font-family: "Fontawesome";
-                    font-size: 8px;
-                    color:  red;
+                    content: '/';
                     padding-right: 8px;
                 }
 
@@ -35,14 +29,7 @@
             }
 
             a {
-                font-size: 15px;
-                font-weight: bold;
                 transition: all .3s ease;
-
-                @include max-media($bk-d-768) {
-                    font-size: 13px;
-                }
-
                 &:hover {
                     color: $main-cl;
                 }

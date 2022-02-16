@@ -1,0 +1,298 @@
+.vision-mission {
+    padding: 60px 0 30px;
+
+    .title {
+        padding-bottom: 5px;
+        border-bottom: 1px solid $main-cl;
+        line-height: 1.2;
+        max-width: max-content;
+        margin: 0 auto;
+    }
+
+    .swiper {
+        &-custom {
+            position: relative;
+        }
+
+        padding: 150px 0 96px;
+        margin: 0 -15px;
+
+        &-slide {
+            width: calc(100% / 3);
+            padding: 0 15px;
+        }
+    }
+
+    .vm-inner {
+        transition: all .3s ease;
+
+        &:hover {
+            transform: translateY(-30px);
+
+            .vm-num {
+                font-size: 100px;
+                transform: translate(-50%, -80%);
+
+            }
+
+            .vm-ig {
+                background-color: transparent;
+
+                img {
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+    }
+
+    .vm-box {
+        border-radius: 10px;
+        box-shadow: 2px 5px 20px rgba($color: $b-cl, $alpha: .20);
+        padding: 15px;
+        transition: all .3s ease;
+
+    }
+
+    .vm-bx {
+        position: relative;
+        padding: 60px 30px 90px;
+        box-sizing: border-box;
+        background: $w-cl;
+        background-clip: padding-box;
+        border: 2px solid transparent;
+        border-radius: 10px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            margin: -2px;
+            border-radius: 10px;
+            background-image: linear-gradient(180deg, #0D47A1 0%, #EC383A 100%);
+        }
+    }
+
+    .vm-num {
+        position: absolute;
+        left: 50%;
+        top: 0%;
+        transform: translate(-50%, -74%);
+        font-size: 200px;
+        z-index: -1;
+        font-weight: bold;
+        -webkit-text-fill-color: white;
+        -webkit-text-stroke: 1px rgba($color: $b-cl, $alpha: .2);
+        line-height: 1.3;
+        transition: all .3s ease;
+    }
+
+    .vm-head {
+        background-color: $main-cl;
+        color: $w-cl;
+        position: absolute;
+        top: -9px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 13px 30px 14px;
+        z-index: 1;
+        @include fz-20;
+        clip-path: ellipse(80% 50% at 50% 40%);
+
+        &::after,
+        &::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            position: absolute;
+            top: 0;
+        }
+
+        &::before {
+            border-color: transparent transparent $b-cl transparent;
+            border-width: 0 0 9px 7px;
+            transform: translateX(-100%);
+            left: 0;
+        }
+
+        &::after {
+            border-color: transparent transparent transparent $b-cl;
+            border-width: 9px 0 0 7px;
+            transform: translateX(100%);
+            right: 0;
+        }
+    }
+
+    .mona-content {
+        line-height: 1.5;
+
+        h4 {
+            margin: 0 0 15px;
+            @include fz-16;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .vm-img {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        z-index: 1;
+    }
+
+    .vm-ig {
+        position: relative;
+        width: 130px;
+        height: 130px;
+        border-radius: 100%;
+        @include flex-mid;
+        border: 2px solid transparent;
+        background-color: $w-cl;
+        // box-sizing: border-box;
+        background-clip: padding-box;
+        box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
+        transition: all .3s ease;
+
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            margin: -2px;
+            border-radius: 100%;
+            background-image: linear-gradient(180deg, #0D47A1 0%, #EC383A 100%)
+        }
+    }
+}
+
+
+.staff {
+    .head {
+        max-width: 770px;
+        margin: 0 auto 30px;
+    }
+
+    .title {
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+
+    .desc {
+        line-height: 1.5;
+    }
+
+    .staff-head {
+        display: flex;
+        justify-content: center;
+    }
+
+    .s-title {
+        background-color: $w-cl;
+        color: $b-cl;
+        @include fz-16;
+        padding: 13px 30px;
+        border-radius: 10px;
+        transition: all .3s ease;
+        font-weight: bold;
+
+        &.active {
+            background-color: $main-cl;
+            color: $w-cl;
+            box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
+        }
+
+        &:not(:first-child) {
+            margin-left: 30px;
+        }
+    }
+
+    .s-content{
+        display: none;
+
+        &.active{
+            animation: showTab 1s;
+            display: block;
+        }
+    }
+
+    .s-social {
+        display: flex;
+        justify-content: center
+    }
+
+    .social-link{
+        @include flex-mid;
+        width: 30px;
+        height: 30px;
+        background-color: $main-cl;
+        color: $w-cl;
+        border-radius: 5px;
+        &:not(:first-child){
+            margin-left: 15px;
+        }
+    }
+
+    .swiper{
+        margin: 0 -15px;
+        padding: 70px 0 40px;
+        &-slide{
+            width: calc(100% / 4);
+            padding: 0 15px;
+        }
+    }
+
+    .staff-box{
+        position: relative;
+        text-align: center;
+        padding: 80px 30px 30px;
+        border: 1px solid rgba($color: $b-cl, $alpha: .3);
+        border-radius: 10px;
+        background-color: $w-cl;
+        transition: all .3s ease;
+        &:hover{
+            border-color: $w-cl;
+            box-shadow: 5px 5px 15px rgba($color: $b-cl, $alpha: .16);
+        }
+    }
+
+    .staff-img{
+        box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
+        width: 98px;
+        height: 98px;
+        border-radius: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50% , -50%);
+        z-index: 1;
+        img{
+            border-radius: 100%;
+        }
+    }
+
+    .name{
+        margin-bottom: 5px;
+    }
+
+    .job{
+        margin-bottom: 15px;
+    }
+
+    .s-desc{
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
+}

@@ -108,9 +108,9 @@ export default function SlideModule() {
                 loop: loops,
                 allowTouchMove: notSlide,
 
-                autoplay: {
-                    delay: 4000,
-                },
+                // autoplay: {
+                //     delay: 4000,
+                // },
 
                 pagination: {
                     el: pagination,
