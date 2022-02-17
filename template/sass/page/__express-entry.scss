@@ -37,6 +37,7 @@
 }
 
 .program-bang {
+    padding-top: 0;
     .head {
         max-width: 770px;
         margin: 0 auto;
@@ -52,8 +53,8 @@
     }
 
     .swiper {
-        margin: 0 -15px;
-        padding: 70px 0;
+        margin: 0 -30px;
+        padding: 30px 0 30px;
 
         &-custom{
             position: relative;
@@ -61,7 +62,7 @@
 
         &-slide {
             width: calc(100% / 3);
-            padding: 0 15px;
+            padding: 0 30px;
         }
     }
 
@@ -69,13 +70,33 @@
         
     }
 
+    .swiper-button-prev{
+        left: -30px;
+        transform: translateX(-100%);
+    }
+
+    .swiper-button-next{
+        right: -30px;
+        transform: translateX(100%);
+    }
+
     .bang-inner {
         padding: 150px 30px 30px;
         border: 1px solid rgba($color: $b-cl, $alpha: .3);
         border-radius: 10px;
         position: relative;
+        background-color: $w-cl;
+        transition: all .3s ease;
 
         &:hover {
+            box-shadow: 5px 5px 25px rgba($color: $b-cl, $alpha: .2);
+            border-color: $w-cl;
+            .bang-num{
+                background-color: $r-cl;
+                &::after{
+                    background-color: #B21F20;
+                }
+            }
 
             .bang-img {
                 border-color: $r-cl;
@@ -89,7 +110,6 @@
                 &::after,
                 &::before {
                     border-color: #8E1A1A transparent transparent transparent;
-
                 }
             }
 
@@ -99,7 +119,39 @@
         }
     }
 
-    .bang-num {}
+    .bang-num {
+        @include fz-32;
+        font-weight: bold;
+        // width: 365px;
+        // height: 85px;
+        width: 100%;
+        padding: 26px 0 26px 55px;
+        border-radius: 100px 100px 100px 0 / 90px;
+        border-top-left-radius: 80px;
+        border-bottom-left-radius: -200px;
+        background-color: $main-cl;
+        color: $w-cl;
+        line-height: 1;
+        transition: all .3s ease;
+
+        position: absolute;
+        left: -30px;
+        top: 30px;
+        box-shadow: 5px 15px 15px rgba($color: $b-cl, $alpha: .25);
+
+        &::after{
+            content: '';
+            width: 242px;
+            height: 99px;
+            border-radius: 20px 10px;
+            background-color: #052B67;
+            position: absolute;
+            top: 20px;
+            left: 0px;
+            z-index: -1;
+            transition: all .3s ease;
+        }
+    }
 
     .bang-tt {
         margin-bottom: 15px;

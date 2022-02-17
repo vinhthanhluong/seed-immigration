@@ -38,14 +38,8 @@ body {
     color: var(--theme-text-color);
     transform-origin: all .3s;
 
-    &[data-theme='dark'] {
-        --theme-bg-color: #{$dark-cl};
-        --theme-text-color: #{$light-cl};
-
-    }
-
     &.show{
-        @include custom-scrollbar(10px, $main-cl );
+        @include custom-scrollbar(7px, $main-cl );
     }
 }
 
@@ -59,7 +53,7 @@ html {
     font-display: swap;
     line-height: $lh-body;
     // color: $cl-body;
-    @include custom-scrollbar(10px , transparent);
+    @include custom-scrollbar(7px , transparent);
 }
 
 a {

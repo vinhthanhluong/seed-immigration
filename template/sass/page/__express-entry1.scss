@@ -1,0 +1,46 @@
+.express-detail {
+
+    .head {
+        // margin-bottom: 50px;
+    }
+
+    .column {
+        width: 50%;
+    }
+
+    .express-box {
+        overflow: hidden;
+        padding-top: 60px;
+
+        @include max-media($bk-d-1200) {
+            padding-top: 40px;
+        }
+
+        &:nth-child(even) {
+            .columns {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+
+    .mona-content {
+        h3 {
+            margin: 0 0 15px;
+            @include fz-32;
+            line-height: 1.2;
+        }
+
+        p {
+            line-height: 1.5;
+            @include fz-16;
+        }
+    }
+
+
+    .img {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+
+}

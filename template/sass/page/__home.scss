@@ -50,12 +50,33 @@
 
 .seed-immi {
 
+    &.immi-nw{
+        .desc{
+            p{
+                line-height: 2;
+            }
+        }
+
+        .btn-now{
+            margin-top: 30px;
+        }
+
+        .seed-img{
+            margin: 0;
+        }
+
+        .seed-ig{
+            box-shadow: none;
+        }
+    }
+
     .column {
         width: 50%;
     }
 
     .title {
         margin-bottom: 15px;
+        line-height: 1.2;
     }
 
     .desc {
@@ -473,7 +494,7 @@
     }
 }
 
-.news {
+.news-home {
     padding: 60px 0 30px;
 
     @include max-media($bk-d-1200) {
@@ -522,67 +543,9 @@
         @include hidden;
     }
 
-    .news-box {
-        background-color: $w-cl;
-        border-radius: 10px;
-        overflow: hidden;
+    
 
-        &:hover {
-            box-shadow: 7px 7px 15px rgba($color: $b-cl, $alpha: .16);
-
-            .news-img {
-                img {
-                    transform: scale(1.1);
-                }
-            }
-
-            .n-title {
-                color: $main-cl;
-            }
-
-            .news-text {
-                border-color: $w-cl;
-            }
-
-        }
-    }
-
-    .news-img {
-        overflow: hidden;
-
-        img {
-            transition: all .3s ease;
-        }
-    }
-
-    .news-text {
-        border: 1px solid rgba($color: $b-cl, $alpha: .3);
-        border-top: 0;
-        border-radius: 0 0 10px 10px;
-        padding: 15px;
-    }
-
-    .n-title {
-        margin-bottom: 15px;
-        display: block;
-        transition: all .3s ease;
-    }
-
-    .desc {
-        line-height: 2;
-    }
-
-    .news-date {
-        margin-top: 15px;
-        padding-top: 15px;
-        border-top: 1px solid rgba($color: #c4c4c4, $alpha: .3);
-        display: flex;
-        align-items: center;
-
-        img {
-            margin-right: 10px;
-        }
-    }
+    
 }
 
 .success-story {
