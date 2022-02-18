@@ -1,0 +1,296 @@
+.rate-profile {
+    .profile-box {
+
+        &:not(:first-child) {
+            margin-top: 30px;
+        }
+
+        &.active {
+            .head {
+                box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
+            }
+
+            .h-icon {
+                background-color: $main-cl;
+            }
+
+            .h-title {
+                color: $main-cl;
+            }
+
+            .h-content {
+                border-color: $w-cl;
+            }
+
+            .profile-content {
+                display: block;
+            }
+        }
+    }
+
+    .head {
+        display: flex;
+        transition: all .3s ease;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .h-icon {
+        background-color: #C4C4C4;
+        padding: 10px;
+        flex-shrink: 0;
+        align-items: center;
+        display: flex;
+        transition: all .3s ease;
+    }
+
+    .h-content {
+        padding: 30px 70px 30px 30px;
+        border: 1px solid rgba($color: $b-cl, $alpha: .3);
+        border-radius: 0 10px 10px 0;
+        transition: all .3s ease;
+    }
+
+    .h-title {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        position: relative;
+        transition: all .3s ease;
+
+        &::after {
+            content: '';
+            width: 388px;
+            height: 1px;
+            background-color: rgba($color: #C4C4C4, $alpha: .3);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    .h-desc {
+        line-height: 1.5;
+    }
+
+    .profile-content {
+        display: none;
+        margin: 30px 0 60px;
+    }
+
+    .profile-bx {
+        &.bx-3 {
+            .pf-group {
+                width: calc(100% / 3);
+                // padding: 15px;
+            }
+        }
+
+        &:not(:first-child) {
+            margin-top: 30px;
+        }
+    }
+
+    .pf-content {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -15px;
+    }
+
+    .pf-group {
+        // width: calc(100% / 3);
+        padding: 15px;
+    }
+
+    .pf-title {
+        color: $main-cl;
+        @include fz-20;
+        padding-bottom: 5px;
+        border-bottom: 1px solid rgba($color: #C4C4C4, $alpha: .3);
+        margin-bottom: 15px;
+    }
+
+    .pf-label {
+        margin-bottom: 10px;
+    }
+
+    .f-control {
+        border-color: rgba($color: $b-cl, $alpha: .3);
+        @include fz-16;
+        border-radius: 10px;
+        padding: 10px 15px;
+        transition: all .3s ease;
+
+        &::placeholder {
+            opacity: .5;
+        }
+
+        &:hover {
+            border-color: $main-cl;
+        }
+    }
+
+    .f-select {
+        background-image: url('../img/svg/a-down3.svg');
+        background-position: right 15px center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+
+    .f-check {
+        display: flex;
+        align-items: center;
+
+        .f-ck {
+            &:first-child {
+                margin-right: 30px;
+            }
+        }
+
+        .checkmark {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .checked {
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            border: 1px solid #C4C4C4;
+            position: relative;
+
+            &::after {
+                content: '';
+                width: 15px;
+                height: 15px;
+                @include pos-mid;
+                background-image: url('../img/svg/checked.svg');
+                @include hidden;
+            }
+        }
+
+        .f-hidden {
+            display: none;
+
+            &:checked+.checkmark {
+                .checked {
+                    &::after {
+                        @include visible;
+                    }
+                }
+            }
+        }
+
+        .t-check {
+            @include fz-16;
+            padding-left: 10px;
+        }
+    }
+
+    .f-check-hn {
+        background-color: $g-E5E5-cl;
+        border-radius: 10px;
+        overflow: hidden;
+
+        display: flex;
+        align-items: center;
+
+        .f-ck {
+
+            &:nth-child(1),
+            &:nth-child(2) {
+                flex-shrink: 0;
+                border-right: 1px solid #C4C4C4;
+            }
+
+            // &:nth-child(2){
+            //     border-left: 1px solid #C4C4C4;
+            //     flex-shrink: 0;
+            // }
+
+            &:nth-child(3) {
+                width: 100%;
+            }
+        }
+
+        .f-hidden {
+            display: none;
+
+            &:checked+.checkmark {
+                background-color: $main-cl;
+                color: $w-cl;
+            }
+        }
+
+        .checkmark {
+            padding: 10px 20px;
+            cursor: pointer;
+
+        }
+    }
+
+    .pf-grp {
+        width: 100%;
+        display: flex;
+    }
+
+    .bx-ck {
+        .f-check {
+            flex-wrap: wrap;
+        }
+
+        .f-ck {
+            &:first-child {
+                margin: 0 0 15px;
+            }
+        }
+    }
+
+    .profile-btn {
+        padding-top: 15px;
+        margin-top: 30px;
+        border-top: 1px solid rgba($color: #C4C4C4, $alpha: .3);
+    }
+
+    .btn-sub {
+        padding: 15px 30px;
+        border-radius: 10px;
+        background-color: $r-cl;
+        color: $w-cl;
+        @include fz-16;
+        width: auto;
+        height: auto;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $main-cl;
+        }
+
+        &:active {
+            transform: scale(.9);
+        }
+    }
+
+    .pf-tabs {
+        width: calc(100% / 12 * 10);
+        @include fz-16;
+        font-weight: bold;
+
+        .f-select {
+            font-weight: normal;
+        }
+
+        th {
+            padding: 15px;
+        }
+
+        td{
+            padding: 15px;
+            &:first-child{
+                padding-left: 0;
+            }
+        }
+    }
+
+
+}

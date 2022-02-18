@@ -89,6 +89,26 @@
             }
         }
 
+        tbody{
+            tr{
+                &:nth-child(odd){
+                    background-color: #F5F5F5;
+                }
+                &:nth-child(even){
+                    background-color: #EBEBEB;
+                }
+            }
+
+            td{
+                padding: 20px 12px;
+                vertical-align: top;
+                border: 1px solid $w-cl;
+                &:nth-child(1){
+                    padding: 20px 15px ;
+                }
+            }
+        }
+
         .settled-head{
             padding: 15px;
             img{

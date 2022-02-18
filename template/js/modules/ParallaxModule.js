@@ -3,13 +3,17 @@ export default function ParallaxModule(){
     document.addEventListener("mousemove", parallax);
 
     function parallax(e) {
-        this.querySelectorAll('.parallax').forEach(el => {
-            const speed = el.getAttribute('data-speed');
-            const x = (window.innerWidth - e.pageX*speed) / 100;
-            const y = (window.innerHeight - e.pageY*speed) / 100;
-
-            el.style.transform = `translateX(${x}px) translateY(${y}px)`
-
-        });
+        const width = window.innerWidth;
+        if (width >= 1200) {
+            this.querySelectorAll('.parallax').forEach(el => {
+                const speed = el.getAttribute('data-speed');
+                const x = (window.innerWidth - e.pageX*speed) / 100;
+                const y = (window.innerHeight - e.pageY*speed) / 100;
+    
+                el.style.transform = `translateX(${x}px) translateY(${y}px)`
+    
+            });
+        }
+       
     }
 }

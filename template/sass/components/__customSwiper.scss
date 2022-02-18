@@ -22,9 +22,16 @@
         background-color: rgba($color: $g-E5E5-cl, $alpha: .4);
         color: $b-cl;
         transition: all .3s ease;
+        @include max-media($bk-d-1200){
+            width: 34px;
+            height: 34px;
+        }
         &::after{
             font-size: 16px;
             font-weight: bold;
+            @include max-media($bk-d-1200){
+                font-size: 12px;
+            }
         }
 
         &:hover{

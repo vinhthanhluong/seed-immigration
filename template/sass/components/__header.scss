@@ -5,6 +5,9 @@
     background-color: $w-cl;
     transition: all .3s ease-in;
     margin-bottom: 44px;
+    @include max-media($bk-d-1200){
+        margin-bottom: 0;
+    }
     &.--fix {
         position: fixed;
         top: 0;
@@ -28,6 +31,13 @@
                 height: 56px;
             }
         }
+
+        .hamburger-btn{
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+        }
     }
 }
 
@@ -42,6 +52,9 @@
         align-items: center;
         // transition: all .3s ease;
         // color: $t-w-cl;
+        @include max-media($bk-d-1200){
+            padding: 9px 0;
+        }
     }
 }
 
@@ -78,18 +91,6 @@
         border-radius: 100%;
         margin: 0 10px;
         cursor: pointer;
-
-        // &.social-face {
-        //     background-color: #3B5998;
-        // }
-
-        // &.social-youtube {
-        //     background-color: #EA412C;
-        // }
-
-        // &.social-insta {
-        //     background-color: $b-cl;
-        // }
     }
 }
 
@@ -100,12 +101,18 @@
 
 .header-search {
     margin-right: 37px;
+    @include max-media($bk-576){
+        margin-right: 10px;
+    }
 }
 
 .header-lang {
     color: $w-cl;
+    margin-right: 20px;
     // text-align: right;
-
+    @include max-media($bk-576){
+        margin-right: 10px;
+    }
     .vodiapicker {
         display: none;
     }
@@ -114,16 +121,24 @@
         position: relative;
         cursor: pointer;
         width: 120px;
-
+        @include max-media($bk-576){
+            width: auto;
+        }
         li {
             display: flex;
             align-items: center;
             @include fz-16;
 
             color: $w-cl;
+            @include max-media($bk-576){
+                font-size: 0;
+            }
 
             img {
                 margin-right: 5px;
+                @include max-media($bk-576){
+                   margin: 0;
+                }
             }
         }
     }
@@ -159,11 +174,18 @@
     &-inner {
         .logo-mobile {
             display: none;
-            max-width: 200px;
-            margin: 0 auto 20px;
+            // max-width: 200px;
+            // margin: 0 auto 20px;
+            padding: 14px 10px;
+            background-color: $main-cl;
+            // margin-bottom: 20px;
 
             @include max-media($bk-d-1200) {
                 display: block;
+            }
+
+            img{
+                // margin: 0 auto;
             }
         }
     }
@@ -196,7 +218,7 @@
             width: 250px;
             height: 100%;
             background-color: $bg-w-cl;
-            padding: 20px 0 40px;
+            padding: 00px 0 40px;
             display: flex;
             flex-direction: column;
             z-index: 99;

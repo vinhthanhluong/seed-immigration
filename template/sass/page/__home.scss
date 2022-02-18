@@ -3,6 +3,12 @@
 
     .column {
         width: calc(100% / 12 * 4);
+        @include max-media($bk-d-992){
+            width: 50%;
+        }
+        @include max-media($bk-576){
+            width: 100%;
+        }
     }
 
     .cata-box {
@@ -12,6 +18,13 @@
         display: flex;
         transition: all .3s ease;
         background-color: $w-cl;
+        height: 100%;
+        @include max-media($bk-d-1200){
+            padding: 20px;
+        }
+        // @include max-media($bk-d-768){
+        //     padding: 15px;
+        // }
 
         &:hover {
             background-color: $main-cl;
@@ -41,6 +54,9 @@
 
     .title {
         margin-bottom: 15px;
+        @include max-media($bk-d-1200){
+            margin-bottom: 7px;
+        }
     }
 
     .desc {
@@ -72,6 +88,14 @@
 
     .column {
         width: 50%;
+        @include max-media($bk-d-992){
+            width: 100%;
+        }
+        &s{
+            @include max-media($bk-d-992){
+                flex-direction: column-reverse;
+            }
+        }
     }
 
     .title {
@@ -112,10 +136,19 @@
         display: flex;
         align-items: center;
         margin: -15px;
+        @include max-media($bk-d-1200){
+            margin:  -7.5px;
+        }
+        @include max-media($bk-d-992){
+            justify-content: center;
+        }
     }
 
     .ig-bx {
         padding: 15px;
+        @include max-media($bk-d-1200){
+            padding: 7.5px;
+        }
     }
 
     .seed-ig {
@@ -125,6 +158,9 @@
 
         &:nth-child(2) {
             margin-top: 30px;
+            @include max-media($bk-d-1200){
+                margin-top: 15px;
+            }
         }
 
         img {
@@ -145,12 +181,22 @@
 
     .column {
         width: 50%;
+        @include max-media($bk-d-992){
+            width: 100%;
+        }
     }
 
     .img {
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
+        @include max-media($bk-d-992){
+            max-width: 60%;
+            margin: 0 auto;
+        }
+        @include max-media($bk-576){
+            max-width: 100%;
+        }
     }
 
     .title {
@@ -201,6 +247,9 @@
 
     .column {
         width: 50%;
+        @include max-media($bk-d-992){
+            width: 100%;
+        }
 
         &s {
             align-items: center;
@@ -222,11 +271,16 @@
 
     .advise-info {
         display: flex;
+        flex-wrap: wrap;
     }
 
     .advise-ls {
         &:first-child {
             padding-right: 50px;
+            @include max-media(500px){
+                padding: 0 0 20px;
+                width: 100%;
+            }
         }
     }
 
@@ -258,6 +312,13 @@
         background-color: $main-cl;
         border-radius: 10px;
         padding: 30px;
+        @include max-media($bk-d-992){
+            padding: 20px;
+            margin-top: 10px;
+        }
+        @include max-media($bk-576){
+            padding: 15px;
+        }
     }
 
     .advise-title {
@@ -265,6 +326,9 @@
         line-height: 1.2;
         color: $w-cl;
         text-align: center;
+        @include max-media($bk-d-768){
+            margin-bottom: 15px;
+        }
     }
 
     .advise-f {
@@ -316,6 +380,10 @@
         border-radius: 10px;
         cursor: pointer;
 
+        @include max-media($bk-576){
+            padding: 13px 20px;
+        }
+
         &:active {
             transform: scale(0.9);
         }
@@ -339,20 +407,34 @@
     .column {
         &.txt {
             width: calc(100% / 12 * 4);
+            @include max-media($bk-d-992){
+                width: 100%;
+            }
         }
 
         &.cata {
             width: calc(100% / 12 * 8);
+            @include max-media($bk-d-992){
+                width: 100%;
+            }
         }
 
         &s {
             align-items: center;
+           
         }
     }
 
     .title {
         margin-bottom: 15px;
         line-height: 1.2;
+      
+
+        br{
+            @include max-media($bk-d-992){
+                display: none;
+            }
+        }
     }
 
     .desc {
@@ -362,11 +444,20 @@
     .col {
         padding: 15px;
         width: 50%;
+        @include max-media($bk-d-992){
+            padding: 7.5px;
+        }
+        @include max-media($bk-576){
+            width: 100%;
+        }
 
         &s {
             display: flex;
             flex-wrap: wrap;
             margin: -15px;
+            @include max-media($bk-d-992){
+                margin: -7.5px;
+            }
         }
     }
 
@@ -377,6 +468,13 @@
         transition: all .3s ease;
         display: flex;
         background-color: $w-cl;
+        height: 100%;
+        @include max-media($bk-d-992){
+            padding: 20px;
+        }
+        @include max-media($bk-d-768){
+            padding: 15px;
+        }
 
         &:hover {
             background-color: $main-cl;
@@ -406,6 +504,9 @@
 
     .c-title {
         margin-bottom: 15px;
+        @include max-media($bk-d-1200){
+            margin-bottom: 7px;
+        }
     }
 
     .c-desc {
@@ -433,6 +534,10 @@
     .swiper {
         padding: 30px 0;
         margin: 0 -15px;
+        @include max-media($bk-d-992){
+            margin:  0 -7.5px;
+        }
+      
 
         &-custom {
             position: relative;
@@ -441,7 +546,13 @@
         &-slide {
             width: calc(100% / 3);
             padding: 0 15px;
-
+            @include max-media($bk-d-992){
+                width: 50%;
+                padding: 0 7.5px;
+            }
+            @include max-media($bk-576){
+                width: 100%;
+            }
 
         }
     }
@@ -450,6 +561,9 @@
         padding: 30px;
         border-radius: 10px;
         transition: all .3s ease;
+        @include max-media($bk-d-1200){
+            padding: 20px;
+        }
 
         &:hover {
             box-shadow: 5px 5px 20px rgba($color: $b-cl, $alpha: .20);
@@ -481,16 +595,26 @@
     }
 
     .swiper-button-prev,
-    .swiper-button-next {}
+    .swiper-button-next {
+        @include max-media($bk-d-1200){
+
+        }
+    }
 
     .swiper-button-prev {
         left: -30px;
         transform: translateX(-100%);
+        @include max-media($bk-d-1440){
+            left: 20px;
+        }
     }
 
     .swiper-button-next {
         right: -30px;
         transform: translateX(100%);
+        @include max-media($bk-d-1440){
+            right: 20px;
+        }
     }
 }
 
