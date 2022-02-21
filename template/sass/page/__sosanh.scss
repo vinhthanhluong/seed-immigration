@@ -7,11 +7,24 @@
         display: flex;
         flex-wrap: wrap;
         margin: -15px;
+        @include max-media($bk-d-992){
+            margin: -7.5px;
+        }
     }
 
-    .setteld-f {
+    .settled-f {
         width: calc(100% /12 * 3);
         padding: 15px;
+        @include max-media($bk-d-992){
+            padding: 7.5px;
+        }
+        @include max-media($bk-d-768){
+            width: calc(100% / 12 * 4);
+        }
+        @include max-media($bk-576){
+            width: 50%;
+        }
+    
     }
 
     .f-hidden {
@@ -24,8 +37,6 @@
                 }
             }
         }
-
-      
     }
 
     .checkmark {
@@ -40,6 +51,7 @@
         border-radius: 10px;
         position: relative;
         border: 1px solid #C4C4C4;
+        flex-shrink: 0;
 
         &::after {
             content: '';
@@ -57,9 +69,19 @@
         padding-left: 10px;
     }
 
+    .bx-tabs{
+        @include max-media($bk-d-1024){
+            overflow: auto;
+
+        }
+    }
+
     .s-table{
         margin-top: 20px;
         width: 100%;
+        @include max-media($bk-d-1024){
+            min-width: 994px;
+        }
 
         // thead , tbody , tr ,th , td{
         //     display: block;

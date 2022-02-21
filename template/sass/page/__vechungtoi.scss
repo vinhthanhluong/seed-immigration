@@ -16,10 +16,27 @@
 
         padding: 150px 0 96px;
         margin: 0 -15px;
+        @include max-media($bk-576){
+            padding: 120px 0 80px;
+        }
+      
 
         &-slide {
             width: calc(100% / 3);
             padding: 0 15px;
+            @include max-media($bk-d-992){
+                width: 50%;
+            }
+            @include max-media($bk-d-768){
+                width: 100%;
+            }
+        }
+
+        &-pagination{
+            display: none;
+            @include max-media($bk-d-1200){
+                display: block;
+            }
         }
     }
 
@@ -61,6 +78,9 @@
         background-clip: padding-box;
         border: 2px solid transparent;
         border-radius: 10px;
+        @include max-media($bk-d-1200){
+            padding: 50px 20px 75px;
+        }
 
         &::after {
             content: '';
@@ -88,6 +108,9 @@
         -webkit-text-stroke: 1px rgba($color: $b-cl, $alpha: .2);
         line-height: 1.3;
         transition: all .3s ease;
+        @include max-media($bk-576){
+            font-size: 150px;
+        }
     }
 
     .vm-head {
@@ -160,7 +183,17 @@
         background-clip: padding-box;
         box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
         transition: all .3s ease;
+        @include max-media($bk-576){
+            width: 100px;
+            height: 100px;
+        }
 
+        img{
+            @include max-media($bk-576){
+                width: 40px;
+                height: 40px;
+            }
+        }
 
         &::after {
             content: '';
@@ -196,6 +229,9 @@
     .staff-head {
         display: flex;
         justify-content: center;
+        @include max-media($bk-576){
+            justify-content: space-between;
+        }
     }
 
     .s-title {
@@ -206,6 +242,9 @@
         border-radius: 10px;
         transition: all .3s ease;
         font-weight: bold;
+        @include max-media($bk-576){
+            padding: 10px 15px;
+        }
 
         &.active {
             background-color: $main-cl;
@@ -215,6 +254,9 @@
 
         &:not(:first-child) {
             margin-left: 30px;
+            @include max-media($bk-576){
+                margin-left: 0px;
+            }
         }
     }
 
@@ -247,9 +289,22 @@
     .swiper{
         margin: 0 -15px;
         padding: 70px 0 40px;
+        @include max-media($bk-d-992){
+            margin:  0 -7.5px;
+        }
         &-slide{
             width: calc(100% / 4);
             padding: 0 15px;
+            @include max-media($bk-d-1200){
+                width: calc(100% / 3);
+            }
+            @include max-media($bk-d-992){
+                padding: 0 7.5px;
+                width: 50%;
+            }
+            @include max-media($bk-576){
+                width: 100%;
+            }
         }
     }
 
@@ -264,6 +319,10 @@
         &:hover{
             border-color: $w-cl;
             box-shadow: 5px 5px 15px rgba($color: $b-cl, $alpha: .16);
+        }
+
+        @include max-media($bk-d-768){
+            padding: 80px 20px 20px;
         }
     }
 

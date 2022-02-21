@@ -22,6 +22,9 @@
             color: $w-cl;
             background-color: $main-cl;
         }
+        @include max-media($bk-d-768){
+            padding: 10px 15px;
+        }
     }
 
     .cts-content {
@@ -39,7 +42,7 @@
 
     .cts-box{
         display: flex;
-        // align-items: center;
+        flex-wrap: wrap;
     }
 
     .cts-list{
@@ -51,6 +54,19 @@
         border-right: 0;
         border-radius: 10px 0 0 10px;
         padding: 0 35px;
+        @include max-media($bk-d-1200){
+            padding: 0 20px;
+        }
+        @include max-media($bk-d-992){
+            width: calc(100% / 12 * 5);
+        }
+        @include max-media($bk-d-768){
+            width: 100%;
+            border-right: 1px solid rgba($color: $b-cl, $alpha: .3);
+            border-bottom: 0;
+            border-radius: 10px 10px 0 0 ;
+            padding: 30px 20px 30px;
+        }
     }
 
     .cts-item{
@@ -87,6 +103,18 @@
         box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .3);
         iframe{
             width: 100%;
+            @include max-media($bk-d-992){
+                height: 350px;
+            }
+        }
+
+        @include max-media($bk-d-992){
+            width: calc(100% / 12 * 7);
+        }
+
+        @include max-media($bk-d-768){
+            width: 100%;
+            border-radius: 0 0 10px 10px;
         }
     }
 

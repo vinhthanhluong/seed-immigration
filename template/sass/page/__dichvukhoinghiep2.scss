@@ -1,6 +1,15 @@
 .s-business {
     .column {
         width: 50%;
+        @include max-media($bk-d-992){
+            width: 100%;
+        }
+
+        &s{
+            @include max-media($bk-d-992){
+                flex-direction: column-reverse;
+            }
+        }
     }
 
     .title {
@@ -20,6 +29,19 @@
         position: relative;
         width: 100%;
         height: 100%;
+        @include max-media($bk-d-992){
+            max-width: 570px;
+            height: 374px;
+            margin: 0 auto;
+        }
+        @include max-media($bk-576){
+            height: 280px;
+        }
+        @include max-media(425px){
+            height: 250px;
+        }
+
+        
     }
 
     .seed-ig {
@@ -27,6 +49,9 @@
 
         img {
             border-radius: 10px;
+            @include max-media($bk-576){
+                max-width: 70%;
+            }
         }
 
         &:nth-child(1) {
@@ -34,6 +59,7 @@
             top: 0;
             left: 0;
             z-index: 1;
+           
         }
 
         &:nth-child(2) {
@@ -48,6 +74,11 @@
             right: 0;
             bottom: 0;
             z-index: -1;
+            img{
+                @include max-media($bk-576){
+                    margin-left: auto;
+                }
+            }
         }
     }
 }
@@ -60,7 +91,7 @@
     }
 
     .head {
-        width: 770px;
+        max-width: 770px;
         margin: 0 auto;
         text-align: center;
     }
@@ -76,6 +107,12 @@
     .swiper {
         margin: 0 -15px;
         padding: 30px 0;
+        @include max-media($bk-d-1200){
+            margin:  0 -7.5px;
+        }
+        @include max-media($bk-d-768){
+            padding: 15px 0 30px;
+        }
 
         &-custom {
             position: relative;
@@ -84,6 +121,15 @@
         &-slide {
             width: calc(100% / 3);
             padding: 0 15px;
+            @include max-media($bk-d-1200){
+                padding: 0 7.5px;
+            }
+            @include max-media($bk-d-992){
+                width: 50%;
+            }
+            @include max-media($bk-d-768){
+                width: 100%;
+            }
         }
     }
 
@@ -101,11 +147,23 @@
     .swiper-button-prev {
         left: -30px;
         transform: translateX(-100%);
+        @include max-media($bk-d-1440){
+            transform: translateX(0);
+        }
+        @include max-media($bk-d-1200){
+            left: -15px;
+        }
     }
 
     .swiper-button-next {
         right: -30px;
         transform: translateX(100%);
+        @include max-media($bk-d-1440){
+            transform: translateX(0);
+        }
+        @include max-media($bk-d-1200){
+            right: -15px;
+        }
     }
 
     .service-box {
@@ -114,6 +172,9 @@
         border: 1px solid rgba($color: $b-cl, $alpha: .3);
         padding: 30px;
         transition: all .3s ease;
+        @include max-media($bk-d-1200){
+            padding: 20px;
+        }
 
         &:hover {
             color: $w-cl;
@@ -171,19 +232,31 @@
 .service-conditions {
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 
     .container-full {
-        padding: 0;
         width: 50%;
         margin: 0;
         margin-left: auto;
         background-color: rgba($color: $w-cl, $alpha: .7);
-        padding-right: calc((100% - 1200px) / 2 + 15px);
+        @include min-media($bk-1200){
+            padding-right: calc((100% - 1200px) / 2 + 15px);
+            padding-left: 30px;
+        }
+        @include max-media($bk-d-992){
+            width: 60%;
+        }
+        @include max-media($bk-d-768){
+            width: 100%;
+        }
 
     }
 
     .service-wrapper {
-        padding: 60px 0 60px 30px;
+        padding: 60px 0;
+        @include max-media($bk-d-1200){
+            padding: 40px 0;
+        }
     }
 
     .title {
@@ -202,6 +275,12 @@
         overflow: auto;
         max-height: 331px;
         @include custom-vertical-scrollbar(7px, $main-cl, transparent);
+        @include max-media($bk-d-1200){
+            max-height: 346px;
+        }
+        @include max-media($bk-576){
+            max-height: 312px;
+        }
     }
 
     .service-item {
@@ -209,12 +288,18 @@
 
         &:not(:first-child) {
             margin-top: 30px;
+            @include max-media($bk-d-1200){
+                margin-top: 15px;
+            }
         }
     }
 
     .service-tt {
         font-weight: bold;
         margin-bottom: 15px;
+        @include max-media($bk-d-1200){
+            margin-bottom: 7px;
+        }
     }
 }
 
@@ -222,18 +307,22 @@
     .title {
         text-align: center;
         margin-bottom: 15px;
+        @include max-media($bk-d-768){
+            margin-bottom: 0%;
+        }
     }
 
 
     .swiper {
         padding: 30px 0;
         overflow: visible;
-
-        // width: 50%;
-        // margin: 0 -15px;
-
+        @include max-media($bk-d-1200){
+            padding: 15px 0 15px;
+        }
+        @include max-media($bk-d-768){
+            // padding: 0 0 30px;
+        }
         &-slide {
-            // padding: 0 15px;
             transform: scale(0.82);
             transition: all .6s ease;
             @include hidden;
@@ -262,6 +351,9 @@
         &-custom {
             width: 50%;
             margin: 0 auto;
+            @include max-media($bk-d-768){
+                width: 70%;
+            }
         }
     }
 
@@ -299,10 +391,19 @@
         bottom: -100%;
         right: 0;
         left: 0;
-        padding: 98px 0 30px;
+        padding: 98px 15px 30px;
         background: linear-gradient(360deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0) 110.86%);
         text-align: center;
         transition: all .5s ease;
         @include hidden;
+        @include max-media($bk-d-992){
+            padding: 60px 15px 30px;
+        }
+        @include max-media($bk-d-768){
+            padding: 30px 15px 20px;
+        }
+        @include max-media($bk-576){
+            padding: 15px;
+        }
     }
 }

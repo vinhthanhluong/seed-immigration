@@ -6,6 +6,11 @@
     .logo {
         margin-bottom: 15px;
         display: block;
+        max-width: 270px;
+        @include max-media($bk-d-1200){
+            max-width: 200px;
+            margin: 0 auto 15px;
+        }
 
         img {
             width: 100%;
@@ -18,11 +23,39 @@
     .ft-lg {
         img {
             margin: 0 auto;
+            @include max-media($bk-d-1200){
+                max-width: 180px;
+            }
         }
     }
 
     .column {
         width: calc(100% / 12 * 3);
+
+        @include max-media($bk-d-1200) {
+            width: calc(100% / 12 * 4);
+        }
+
+        @include max-media($bk-d-768) {
+            width: 50%;
+        }
+
+        @include max-media($bk-576) {
+            width: 100%;
+        }
+
+        &:nth-child(1) {
+            @include max-media($bk-d-1200) {
+                width: 100%;
+
+                .ft-ig {
+                    max-width: 270px;
+                    margin: 0 auto;
+                }
+            }
+
+
+        }
     }
 
     .ft-tt {
@@ -35,6 +68,10 @@
 
         &:not(:first-child) {
             margin-top: 15px;
+
+            @include max-media($bk-d-1200) {
+                margin-top: 10px;
+            }
         }
 
         a {
@@ -83,20 +120,26 @@
     .t-facebook {
         border-radius: 10px;
         overflow: hidden;
+        iframe {
+            border-radius: 10px;
+            overflow: hidden;
+            max-width: 270px;
+        }
     }
 
-    .ft-social{
+    .ft-social {
         display: flex;
         align-items: center;
         margin-top: 15px;
 
-        .s-item{
-            &:not(:first-child){
+        .s-item {
+            &:not(:first-child) {
                 margin-left: 10px;
             }
 
             transition: all .3s ease;
-            &:hover{
+
+            &:hover {
                 transform: translateY(-5px);
             }
         }

@@ -16,4 +16,12 @@ export default function FileActiveModule() {
             $('.popup-info').addClass('hidden');
         });
     }
+
+    if ($('.vision-mission').length) {
+        const __w = $(window).width();
+
+        if (__w < 1200) {
+            $('.swiper').removeClass('notslide');
+        }
+    }
 }

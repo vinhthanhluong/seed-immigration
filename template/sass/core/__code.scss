@@ -14,6 +14,13 @@
     background-color: #F1F1F1;
 }
 
+.sec-63{
+    padding: 60px 0 30px;
+    @include max-media($bk-d-1200){
+        padding: 40px 0 10px;
+    }
+}
+
 .news-bx {
     background-color: $w-cl;
     border-radius: 10px;

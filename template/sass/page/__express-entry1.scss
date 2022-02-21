@@ -6,10 +6,13 @@
 
     .column {
         width: 50%;
+        @include max-media($bk-d-768){
+            width: 100%;
+        }
     }
 
     .express-box {
-        overflow: hidden;
+        // overflow: hidden;
         padding-top: 60px;
 
         @include max-media($bk-d-1200) {
@@ -28,11 +31,15 @@
             margin: 0 0 15px;
             @include fz-32;
             line-height: 1.2;
+            @include max-media($bk-d-992){
+                margin-bottom: 10px;
+            }
         }
 
         p {
             line-height: 1.5;
             @include fz-16;
+            margin: 0;
         }
     }
 

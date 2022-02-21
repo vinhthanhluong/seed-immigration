@@ -1,6 +1,28 @@
 .event {
+
+    &.event-sm {
+        .column {
+            &:last-child{
+                display: none;
+                @include max-media($bk-d-992){
+                    display: block;
+                }
+            }
+        }
+    }
+
     .column {
         width: calc(100%/ 3);
+
+        @include max-media($bk-d-992) {
+            width: calc(100% / 2);
+        }
+
+        @include max-media($bk-576) {
+            width: 100%;
+        }
+
+
     }
 
     .title {
@@ -17,6 +39,10 @@
 .news {
     .column {
         width: 50%;
+
+        @include max-media($bk-576) {
+            width: 100%;
+        }
     }
 
     .title {
@@ -26,11 +52,14 @@
 
     .new-box {
         overflow: hidden;
-        padding-top: 30px;
+
+        &:not(:first-child) {
+            padding-top: 30px;
+        }
 
         &:hover {
-            .img{
-                img{
+            .img {
+                img {
                     transform: scale(1.1);
                 }
             }
@@ -56,11 +85,23 @@
         margin-bottom: 15px;
         font-weight: bold;
         display: block;
+
+        @include max-media($bk-d-992) {
+            margin-bottom: 10px;
+        }
     }
 
     .desc {
         line-height: 2;
         @include line-clamp(9);
+
+        @include max-media($bk-d-1200) {
+            -webkit-line-clamp: 7;
+        }
+
+        @include max-media($bk-d-992) {
+            -webkit-line-clamp: 4;
+        }
     }
 
     .news-date {
@@ -70,12 +111,17 @@
         margin-top: 15px;
         border-top: 1px solid #C4C4C4;
 
+        @include max-media($bk-d-992) {
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+
         img {
             margin-right: 10px;
         }
     }
 
-    .new-btn{
+    .new-btn {
         margin-top: 30px;
         text-align: center;
     }

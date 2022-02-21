@@ -1,12 +1,32 @@
 .bn-catalog {
     transform: translateY(-50%);
     padding-top: 15px;
-    @include max-media($bk-d-992){
+
+    @include max-media($bk-d-992) {
         padding-top: 7.5px;
+    }
+
+    @include max-media($bk-d-768) {
+        transform: translateY(0);
+        padding: 40px 0;
     }
 
     .column {
         width: calc(100% / 3);
+
+        @include max-media($bk-d-768) {
+            width: 50%;
+        }
+
+        @include max-media($bk-576) {
+            width: 100%;
+        }
+
+        &s {
+            @include max-media($bk-d-768) {
+                justify-content: center;
+            }
+        }
     }
 
     .cata-box {
@@ -16,6 +36,10 @@
         padding: 30px;
         display: flex;
         align-items: center;
+
+        @include max-media($bk-d-992) {
+            padding: 15px;
+        }
     }
 
     .cata-img {
@@ -24,11 +48,16 @@
 
     .cata-text {
         padding-left: 15px;
+
     }
 
     .num {
         padding-bottom: 14px;
         line-height: 1;
+
+        @include max-media($bk-d-992) {
+            padding-bottom: 7px;
+        }
     }
 
     .desc {
@@ -38,6 +67,7 @@
 
 .program-bang {
     padding-top: 0;
+
     .head {
         max-width: 770px;
         margin: 0 auto;
@@ -56,7 +86,7 @@
         margin: 0 -30px;
         padding: 30px 0 30px;
 
-        &-custom{
+        &-custom {
             position: relative;
         }
 
@@ -66,18 +96,33 @@
         }
     }
 
-    .swiper-button-prev , .swiper-button-next{
-        
-    }
+    .swiper-button-prev,
+    .swiper-button-next {}
 
-    .swiper-button-prev{
+    .swiper-button-prev {
         left: -30px;
         transform: translateX(-100%);
+
+        @include max-media($bk-d-1440) {
+            left: 0;
+        }
+
+        @include max-media($bk-d-1200) {
+            transform: translateX(50%);
+        }
     }
 
-    .swiper-button-next{
+    .swiper-button-next {
         right: -30px;
         transform: translateX(100%);
+
+        @include max-media($bk-d-1440) {
+            right: 0;
+        }
+
+        @include max-media($bk-d-1200) {
+            transform: translateX(-50%);
+        }
     }
 
     .bang-inner {
@@ -91,17 +136,20 @@
         &:hover {
             box-shadow: 5px 5px 25px rgba($color: $b-cl, $alpha: .2);
             border-color: $w-cl;
-            .bang-num{
+
+            .bang-num {
                 background-color: $r-cl;
-                &::after{
+
+                &::after {
                     background-color: #B21F20;
                 }
             }
 
             .bang-img {
                 border-color: $r-cl;
-                img{
-                    filter: none;                    
+
+                img {
+                    filter: none;
                 }
             }
 
@@ -139,7 +187,7 @@
         top: 30px;
         box-shadow: 5px 15px 15px rgba($color: $b-cl, $alpha: .25);
 
-        &::after{
+        &::after {
             content: '';
             width: 242px;
             height: 99px;
@@ -151,6 +199,28 @@
             z-index: -1;
             transition: all .3s ease;
         }
+
+
+    }
+
+    .bang-test {
+        width: 60px;
+        height: 37px;
+        background-color: $main-cl;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        transform: translateY(90%);
+        // mix-blend-mode: darken;
+        &::before {
+            content: '';
+            background-color: $w-cl;
+            @include pos-full;
+            border-top-left-radius: 100%;
+        }
+
+
+
     }
 
     .bang-tt {
@@ -192,7 +262,8 @@
         border: 1px solid rgba($color: $b-cl, $alpha: .3);
         margin: 30px auto 0;
         transition: all .3s ease;
-        img{
+
+        img {
             filter: brightness(0) invert(0);
             transition: all .3s ease;
         }

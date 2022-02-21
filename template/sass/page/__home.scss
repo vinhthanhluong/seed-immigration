@@ -3,10 +3,12 @@
 
     .column {
         width: calc(100% / 12 * 4);
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             width: 50%;
         }
-        @include max-media($bk-576){
+
+        @include max-media($bk-576) {
             width: 100%;
         }
     }
@@ -19,9 +21,11 @@
         transition: all .3s ease;
         background-color: $w-cl;
         height: 100%;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             padding: 20px;
         }
+
         // @include max-media($bk-d-768){
         //     padding: 15px;
         // }
@@ -54,7 +58,8 @@
 
     .title {
         margin-bottom: 15px;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             margin-bottom: 7px;
         }
     }
@@ -66,33 +71,35 @@
 
 .seed-immi {
 
-    &.immi-nw{
-        .desc{
-            p{
+    &.immi-nw {
+        .desc {
+            p {
                 line-height: 2;
             }
         }
 
-        .btn-now{
+        .btn-now {
             margin-top: 30px;
         }
 
-        .seed-img{
+        .seed-img {
             margin: 0;
         }
 
-        .seed-ig{
+        .seed-ig {
             box-shadow: none;
         }
     }
 
     .column {
         width: 50%;
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             width: 100%;
         }
-        &s{
-            @include max-media($bk-d-992){
+
+        &s {
+            @include max-media($bk-d-992) {
                 flex-direction: column-reverse;
             }
         }
@@ -136,17 +143,20 @@
         display: flex;
         align-items: center;
         margin: -15px;
-        @include max-media($bk-d-1200){
-            margin:  -7.5px;
+
+        @include max-media($bk-d-1200) {
+            margin: -7.5px;
         }
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             justify-content: center;
         }
     }
 
     .ig-bx {
         padding: 15px;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             padding: 7.5px;
         }
     }
@@ -158,7 +168,8 @@
 
         &:nth-child(2) {
             margin-top: 30px;
-            @include max-media($bk-d-1200){
+
+            @include max-media($bk-d-1200) {
                 margin-top: 15px;
             }
         }
@@ -181,7 +192,8 @@
 
     .column {
         width: 50%;
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             width: 100%;
         }
     }
@@ -190,11 +202,13 @@
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 10px 10px 30px rgba($color: $b-cl, $alpha: .25);
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             max-width: 60%;
             margin: 0 auto;
         }
-        @include max-media($bk-576){
+
+        @include max-media($bk-576) {
             max-width: 100%;
         }
     }
@@ -247,7 +261,8 @@
 
     .column {
         width: 50%;
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             width: 100%;
         }
 
@@ -277,7 +292,8 @@
     .advise-ls {
         &:first-child {
             padding-right: 50px;
-            @include max-media(500px){
+
+            @include max-media(500px) {
                 padding: 0 0 20px;
                 width: 100%;
             }
@@ -312,11 +328,13 @@
         background-color: $main-cl;
         border-radius: 10px;
         padding: 30px;
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             padding: 20px;
             margin-top: 10px;
         }
-        @include max-media($bk-576){
+
+        @include max-media($bk-576) {
             padding: 15px;
         }
     }
@@ -326,7 +344,8 @@
         line-height: 1.2;
         color: $w-cl;
         text-align: center;
-        @include max-media($bk-d-768){
+
+        @include max-media($bk-d-768) {
             margin-bottom: 15px;
         }
     }
@@ -380,7 +399,7 @@
         border-radius: 10px;
         cursor: pointer;
 
-        @include max-media($bk-576){
+        @include max-media($bk-576) {
             padding: 13px 20px;
         }
 
@@ -390,16 +409,16 @@
     }
 }
 
-.working-process{
-    .title{
+.working-process {
+    .title {
         margin-bottom: 15px;
     }
 }
 
 .choose-seed {
 
-    &.choose-sd{
-        .columns{
+    &.choose-sd {
+        .columns {
             flex-direction: row-reverse;
         }
     }
@@ -407,31 +426,33 @@
     .column {
         &.txt {
             width: calc(100% / 12 * 4);
-            @include max-media($bk-d-992){
+
+            @include max-media($bk-d-992) {
                 width: 100%;
             }
         }
 
         &.cata {
             width: calc(100% / 12 * 8);
-            @include max-media($bk-d-992){
+
+            @include max-media($bk-d-992) {
                 width: 100%;
             }
         }
 
         &s {
             align-items: center;
-           
+
         }
     }
 
     .title {
         margin-bottom: 15px;
         line-height: 1.2;
-      
 
-        br{
-            @include max-media($bk-d-992){
+
+        br {
+            @include max-media($bk-d-992) {
                 display: none;
             }
         }
@@ -444,10 +465,12 @@
     .col {
         padding: 15px;
         width: 50%;
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             padding: 7.5px;
         }
-        @include max-media($bk-576){
+
+        @include max-media($bk-576) {
             width: 100%;
         }
 
@@ -455,7 +478,8 @@
             display: flex;
             flex-wrap: wrap;
             margin: -15px;
-            @include max-media($bk-d-992){
+
+            @include max-media($bk-d-992) {
                 margin: -7.5px;
             }
         }
@@ -469,10 +493,12 @@
         display: flex;
         background-color: $w-cl;
         height: 100%;
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             padding: 20px;
         }
-        @include max-media($bk-d-768){
+
+        @include max-media($bk-d-768) {
             padding: 15px;
         }
 
@@ -504,7 +530,8 @@
 
     .c-title {
         margin-bottom: 15px;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             margin-bottom: 7px;
         }
     }
@@ -534,10 +561,11 @@
     .swiper {
         padding: 30px 0;
         margin: 0 -15px;
-        @include max-media($bk-d-992){
-            margin:  0 -7.5px;
+
+        @include max-media($bk-d-992) {
+            margin: 0 -7.5px;
         }
-      
+
 
         &-custom {
             position: relative;
@@ -546,11 +574,13 @@
         &-slide {
             width: calc(100% / 3);
             padding: 0 15px;
-            @include max-media($bk-d-992){
+
+            @include max-media($bk-d-992) {
                 width: 50%;
                 padding: 0 7.5px;
             }
-            @include max-media($bk-576){
+
+            @include max-media($bk-576) {
                 width: 100%;
             }
 
@@ -561,7 +591,8 @@
         padding: 30px;
         border-radius: 10px;
         transition: all .3s ease;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             padding: 20px;
         }
 
@@ -596,38 +627,46 @@
 
     .swiper-button-prev,
     .swiper-button-next {
-        @include max-media($bk-d-1200){
-
-        }
+        @include max-media($bk-d-1200) {}
     }
 
     .swiper-button-prev {
         left: -30px;
         transform: translateX(-100%);
-        @include max-media($bk-d-1440){
-            left: 20px;
+
+        @include max-media($bk-d-1440) {
+            transform: translateX(0%);
+        }
+
+        @include max-media($bk-d-1200) {
+            left: -15px;
         }
     }
 
     .swiper-button-next {
         right: -30px;
         transform: translateX(100%);
-        @include max-media($bk-d-1440){
-            right: 20px;
+
+        @include max-media($bk-d-1440) {
+            transform: translateX(0%);
+        }
+
+        @include max-media($bk-d-1200) {
+            right: -15px;
         }
     }
 }
 
 .news-home {
-    padding: 60px 0 30px;
 
-    @include max-media($bk-d-1200) {
-        padding: 40px 0 10px;
-    }
 
     .swiper {
         padding: 15px 0 30px;
         margin: 0 -15px;
+
+        @include max-media($bk-d-1200) {
+            margin: 0 -7.5px;
+        }
 
         &-custom {
             position: relative;
@@ -641,35 +680,57 @@
 
                 .swiper-button-prev {
                     left: -30px;
+
+                    @include max-media($bk-d-1200) {
+                        left: -15px;
+                    }
                 }
 
                 .swiper-button-next {
                     right: -30px;
+
+                    @include max-media($bk-d-1200) {
+                        right: -15px;
+                    }
                 }
             }
         }
 
-
-
         &-slide {
             width: calc(100% / 3);
             padding: 0 15px;
+
+            @include max-media($bk-d-1200) {
+                padding: 0 7.5px;
+            }
+
+            @include max-media($bk-d-992) {
+                width: calc(100% / 2);
+            }
+
+            @include max-media($bk-576) {
+                width: 100%;
+            }
         }
     }
 
     .swiper-button-prev {
         transform: translateX(-100%);
         @include hidden;
+
+        @include max-media($bk-d-1440) {
+            transform: translateX(0);
+        }
     }
 
     .swiper-button-next {
         transform: translateX(100%);
         @include hidden;
+
+        @include max-media($bk-d-1440) {
+            transform: translateX(0);
+        }
     }
-
-    
-
-    
 }
 
 .success-story {
@@ -681,22 +742,31 @@
     .column {
         width: calc(100% /12 * 3);
 
+        @include max-media($bk-768) {
+            width: 50%;
+        }
+
         &.w-50 {
             width: calc(100% /12 * 6);
+
+            @include max-media($bk-768) {
+                width: 100%;
+            }
         }
     }
 
     .story-box {
         position: relative;
         overflow: hidden;
-        &:hover{
-            .img{
-                &::after{
+
+        &:hover {
+            .img {
+                &::after {
                     @include visible;
                 }
             }
 
-            .mona-content{
+            .mona-content {
                 @include visible;
                 transform: translateY(0);
             }
@@ -716,7 +786,7 @@
             @include hidden;
         }
 
-        img{
+        img {
             width: 100%;
             height: 100%;
             max-width: 100%;
@@ -740,6 +810,10 @@
             line-height: 1.5;
             margin: 0 0 15px;
             @include line-clamp(2);
+
+            @include max-media($bk-d-1200) {
+                margin-bottom: 10px;
+            }
         }
 
         p {
@@ -748,8 +822,9 @@
             line-height: 1.6;
             @include line-clamp(5);
 
+            @include max-media(400px) {
+                -webkit-line-clamp: 3;
+            }
         }
     }
-
-
 }
