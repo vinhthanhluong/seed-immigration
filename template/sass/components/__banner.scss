@@ -6,6 +6,33 @@
     .swiper-slide {
         padding: 0;
         height: 100%;
+        &-active{
+            .label{
+                animation: tracking-in-expand-fwd-top 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+                @include max-media($bk-d-768){
+                    animation: none;
+                }
+            }
+            .title{
+                animation: tracking-in-expand-fwd-top 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+                @include max-media($bk-d-768){
+                    animation: none;
+                }
+            }
+            .desc{
+                animation: slide-in-bottom 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+                @include max-media($bk-d-768){
+                    animation: none;
+                }
+            }
+
+            .btn-now{
+                animation: slide-in-bottom 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+                @include max-media($bk-d-768){
+                    animation: none;
+                }
+            }
+        }
     }
 
     .swiper-slide>img {

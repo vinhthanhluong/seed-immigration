@@ -737,6 +737,34 @@ sup {
     opacity: 0;
   }
 }
+@keyframes tracking-in-expand-fwd-top {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-700px) translateY(-500px);
+    transform: translateZ(-700px) translateY(-500px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .main-cl {
   color: #0D47A1;
 }
@@ -1077,13 +1105,16 @@ sup {
 
 .header-menu-inner .logo-mobile {
   display: none;
-  padding: 14px 10px;
+  padding: 10px 10px;
   background-color: #0D47A1;
 }
 @media screen and (max-width: 1199px) {
   .header-menu-inner .logo-mobile {
     display: block;
   }
+}
+.header-menu-inner .logo-mobile img {
+  height: 58px;
 }
 @media screen and (min-width: 1200px) {
   .header-menu {
@@ -2529,6 +2560,38 @@ sup {
 .banners .swiper-slide {
   padding: 0;
   height: 100%;
+}
+.banners .swiper-slide-active .label {
+  animation: tracking-in-expand-fwd-top 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+@media screen and (max-width: 767px) {
+  .banners .swiper-slide-active .label {
+    animation: none;
+  }
+}
+.banners .swiper-slide-active .title {
+  animation: tracking-in-expand-fwd-top 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+@media screen and (max-width: 767px) {
+  .banners .swiper-slide-active .title {
+    animation: none;
+  }
+}
+.banners .swiper-slide-active .desc {
+  animation: slide-in-bottom 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+@media screen and (max-width: 767px) {
+  .banners .swiper-slide-active .desc {
+    animation: none;
+  }
+}
+.banners .swiper-slide-active .btn-now {
+  animation: slide-in-bottom 2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+@media screen and (max-width: 767px) {
+  .banners .swiper-slide-active .btn-now {
+    animation: none;
+  }
 }
 .banners .swiper-slide > img {
   width: 100%;
