@@ -23,8 +23,11 @@
 				background-color: $main-cl;
 				color: $t-w-cl;
 				border: 1px solid transparent;
+			}
 
-				
+			@include max-media($bk-576){
+				width: 36px;
+				height: 36px;
 			}
 		}
 
@@ -44,7 +47,12 @@
 					filter:  brightness(0) invert(1);
 				}
 			}
+			@include max-media($bk-576){
+				width: 36px;
+				height: 36px;
+			}
 		}
+		
 
 		.page-dots{
 			margin: 0 12px;

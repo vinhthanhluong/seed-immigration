@@ -163,7 +163,7 @@ li {
 }
 
 .wow {
-    animation-duration: 1s;
+    animation-duration: 1.2s;
 
     @include max-media($bk-d-768) {
         visibility: visible !important;

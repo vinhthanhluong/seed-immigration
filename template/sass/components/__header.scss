@@ -209,6 +209,10 @@
 
         &.--active {
             right: 0;
+
+            .overplay{
+                display: block;
+            }
         }
 
         .header-menu-inner {

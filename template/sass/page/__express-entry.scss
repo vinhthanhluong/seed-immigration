@@ -85,6 +85,9 @@
     .swiper {
         margin: 0 -30px;
         padding: 30px 0 30px;
+        @include max-media($bk-d-1200){
+            margin: 0 -15px;
+        }
 
         &-custom {
             position: relative;
@@ -93,6 +96,17 @@
         &-slide {
             width: calc(100% / 3);
             padding: 0 30px;
+            @include max-media($bk-d-1200){
+                // width: 50%;
+                padding: 0 15px;
+            }
+            @include max-media($bk-d-992){
+                width: 50%;
+            }
+            @include max-media($bk-576){
+                width: 100%;
+            }
+            
         }
     }
 
@@ -126,22 +140,33 @@
     }
 
     .bang-inner {
-        padding: 150px 30px 30px;
+        // padding: 150px 30px 30px;
+        padding: 30px;
         border: 1px solid rgba($color: $b-cl, $alpha: .3);
         border-radius: 10px;
         position: relative;
         background-color: $w-cl;
         transition: all .3s ease;
+        @include max-media($bk-d-768){
+            padding: 20px;
+        }
 
         &:hover {
             box-shadow: 5px 5px 25px rgba($color: $b-cl, $alpha: .2);
             border-color: $w-cl;
 
             .bang-num {
-                background-color: $r-cl;
-
+                // background-color: $r-cl;
                 &::after {
                     background-color: #B21F20;
+                }
+
+                .bang-d {
+                    display: block;
+                }
+
+                .bang-x {
+                    display: none;
                 }
             }
 
@@ -154,7 +179,6 @@
             }
 
             .bang-ft {
-
                 &::after,
                 &::before {
                     border-color: #8E1A1A transparent transparent transparent;
@@ -173,54 +197,65 @@
         // width: 365px;
         // height: 85px;
         width: 100%;
-        padding: 26px 0 26px 55px;
-        border-radius: 100px 100px 100px 0 / 90px;
-        border-top-left-radius: 80px;
-        border-bottom-left-radius: -200px;
-        background-color: $main-cl;
+        // padding: 26px 0 26px 55px;
+        // border-radius: 100px 100px 100px 0 / 90px;
+        // border-top-left-radius: 80px;
+        // border-bottom-left-radius: -200px;
+        // background-color: $main-cl;
+        // box-shadow: 5px 15px 15px rgba($color: $b-cl, $alpha: .25);
         color: $w-cl;
         line-height: 1;
         transition: all .3s ease;
-
-        position: absolute;
-        left: -30px;
-        top: 30px;
-        box-shadow: 5px 15px 15px rgba($color: $b-cl, $alpha: .25);
+        position: relative;
+        left: -60px;
+        top: 0px;
+        @include max-media($bk-d-1200){
+            left: -40px;
+        }
+        @include max-media($bk-d-768){
+            left: -30px;
+        }
 
         &::after {
             content: '';
             width: 242px;
-            height: 99px;
+            height: 50px;
             border-radius: 20px 10px;
             background-color: #052B67;
             position: absolute;
-            top: 20px;
+            // top: 7px;
+            bottom: -7px;
             left: 0px;
             z-index: -1;
+            @include max-media($bk-d-1200){
+                bottom: -5px;
+            }
+        }
+
+        p {
+            position: absolute;
+            top: 50%;
+            left: 60px;
+            transform: translateY(-85%);
+            @include max-media($bk-d-1200){
+                left: 40px;
+            }
+        }
+
+        img {
             transition: all .3s ease;
+            height: 99px;
+            @include max-media($bk-d-1200){
+                height: 92px;
+            }
+            @include max-media($bk-d-992){
+                height: 80px;
+            }
         }
 
-
-    }
-
-    .bang-test {
-        width: 60px;
-        height: 37px;
-        background-color: $main-cl;
-        position: absolute;
-        bottom: 0px;
-        left: 0;
-        transform: translateY(90%);
-        // mix-blend-mode: darken;
-        &::before {
-            content: '';
-            background-color: $w-cl;
-            @include pos-full;
-            border-top-left-radius: 100%;
+        .bang-d {
+            display: none;
         }
-
-
-
     }
 
     .bang-tt {
@@ -263,9 +298,18 @@
         margin: 30px auto 0;
         transition: all .3s ease;
 
+        @include max-media($bk-576){
+            width: 90px;
+            height: 90px;
+        }
+
         img {
             filter: brightness(0) invert(0);
             transition: all .3s ease;
+            @include max-media($bk-576){
+                width: 40px;
+                height: 40px;
+            }
         }
     }
 
